@@ -1,40 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:ViewModels"
              x:Class="queso.MainPage">
+    <ContentPage.BindingContext>
+        <local:ViewModels></local:ViewModels>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Frame BackgroundColor="#f8f32b" Padding="24" CornerRadius="0">
+            <Label Text="Calculadora Queso!" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36"/>
+        </Frame>
+      
+        <Entry Text="{Binding Nm1}" Keyboard="Numeric" Placeholder="ingrese un numero"/>
+        <Entry Text="{Binding Nm2}" Keyboard="Numeric" Placeholder="ingrese un numero" />
+        <Button Command="{Binding sumar}" Text="sumar"></Button>
+        <Button Command="{Binding Resta}" Text="restar"></Button>
+        <Button Command="{Binding multiplicar}" Text="multiplicar"></Button>
+        <Button Command="{Binding division}" Text="dividir"></Button>
+        <Label Text="El resultado es:" FontSize="Medium"></Label>
+        <Label Text="{Binding TT}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" ></Label>
 
-    <StackLayout
-         HorizontalOptions="Center"
-        VerticalOptions="Center"
-        BackgroundColor="#CCA9DD"  >
-
-
-
-        <Label Text="Calculadora!" 
-                HorizontalOptions="Center"
-                FontAttributes="Bold"
-                FontSize="25"
-                TextColor="Black"   />
-
-        <Label Text="Resultado:!" 
-                HorizontalOptions="Center"
-                
-                FontSize="25"
-                TextColor="White"   />
-
-        <Label 
-            TextColor="White" Text=""  x:Name="lblRes"
-                   HorizontalOptions="Center"
-                   FontFamily="italic"
-                   FontSize="20"/>
-
-        <Entry Placeholder="Ingresa el primer numero" Keyboard="Numeric" x:Name="txtn1" />
-        <Entry Placeholder="Ingresa el segundo numero" Keyboard="Numeric" x:Name="txtn2"/>
-        <Label Text="Selecione la operacion"  />
-        <Picker x:Name="wkOperacion" />
-
-        <Button Text="Calcular" x:Name="calcular" 
-                    BackgroundColor="#A2CADF"/>
 
 
     </StackLayout>
