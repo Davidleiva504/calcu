@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="queso.MainPage">
+
+    <StackLayout
+         HorizontalOptions="Center"
+        VerticalOptions="Center"
+        BackgroundColor="#CCA9DD"  >
+
+
+
+        <Label Text="Calculadora!" 
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="25"
+                TextColor="Black"   />
+
+        <Label Text="Resultado:!" 
+                HorizontalOptions="Center"
+                
+                FontSize="25"
+                TextColor="White"   />
+
+        <Label 
+            TextColor="White" Text=""  x:Name="lblRes"
+                   HorizontalOptions="Center"
+                   FontFamily="italic"
+                   FontSize="20"/>
+
+        <Entry Placeholder="Ingresa el primer numero" Keyboard="Numeric" x:Name="txtn1" />
+        <Entry Placeholder="Ingresa el segundo numero" Keyboard="Numeric" x:Name="txtn2"/>
+        <Label Text="Selecione la operacion"  />
+        <Picker x:Name="wkOperacion" />
+
+        <Button Text="Calcular" x:Name="calcular" 
+                    BackgroundColor="#A2CADF"/>
+
+
+    </StackLayout>
+
+</ContentPage>
